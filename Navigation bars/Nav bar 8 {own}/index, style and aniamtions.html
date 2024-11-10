@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation bar | 8</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            --main-clr: #2475ff;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        navigation-bar {
+            position: fixed;
+            bottom: 0;
+            padding: 20px;
+        }
+
+        navigation-bar navigation-bar-cover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--main-clr);
+            padding: 20px;
+        }
+
+        navigation-bar navigation-bar-cover tabs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        navigation-bar navigation-bar-cover tabs input {
+            appearance: none;
+        }
+
+        navigation-bar navigation-bar-cover tabs buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        navigation-bar navigation-bar-cover tabs buttons label {
+            height: fit-content;
+            width: 100px;
+            padding: 15px 0px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        navigation-bar navigation-bar-cover tabs buttons label ion-icon {
+            scale: 2;
+        }
+
+        /*Animations*/
+
+        tabs input:nth-child(1):checked ~ buttons label:nth-child(1),
+        tabs input:nth-child(2):checked ~ buttons label:nth-child(2),
+        tabs input:nth-child(3):checked ~ buttons label:nth-child(3),
+        tabs input:nth-child(4):checked ~ buttons label:nth-child(4),
+        tabs input:nth-child(5):checked ~ buttons label:nth-child(5) {
+            background-color: #ffffff;
+        }
+
+    </style>
+
+</head>
+<body>
+    <navigation-bar>
+        <navigation-bar-cover>
+            <tabs>
+                <input type="radio" name="TabMenu" id="Settings">
+                <input type="radio" name="TabMenu" id="Profile">
+                <input type="radio" name="TabMenu" id="Home" checked>
+                <input type="radio" name="TabMenu" id="Messages">
+                <input type="radio" name="TabMenu" id="Help">
+                <buttons>
+                    <label for="Settings"><ion-icon name="settings-outline"></ion-icon></label>
+                    <label for="Profile"><ion-icon name="person-outline"></ion-icon></label>
+                    <label for="Home"><ion-icon name="home-outline"></ion-icon></label>
+                    <label for="Messages"><ion-icon name="chatbubbles-outline"></ion-icon></label>
+                    <label for="Help"><ion-icon name="help-outline"></ion-icon></label>
+                </buttons>
+            </tabs>
+        </navigation-bar-cover>
+    </navigation-bar>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

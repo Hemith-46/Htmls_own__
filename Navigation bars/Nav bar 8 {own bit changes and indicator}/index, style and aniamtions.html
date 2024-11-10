@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation bar | 8</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: 0.2s;
+            --main-clr: #2475ff;
+            --border-radius: 20px;
+            --body-bg-clr: #181818;
+            --button-bg-underline-bg-clr: #18181890;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--body-bg-clr);
+        }
+
+        navigation-bar {
+            position: fixed;
+            bottom: 0;
+            padding: 20px;
+        }
+
+        navigation-bar navigation-bar-cover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-color: var(--main-clr);
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+
+        navigation-bar navigation-bar-cover::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+            border-radius: var(--border-radius);
+            filter: blur(10px);
+            box-shadow: inset 10px 10px 30px 5px var(--button-bg-underline-bg-clr), inset -10px -10px 5px var(--button-bg-underline-bg-clr);
+        }
+
+        navigation-bar navigation-bar-cover tabs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        navigation-bar navigation-bar-cover tabs input {
+            appearance: none;
+        }
+
+        navigation-bar navigation-bar-cover tabs buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            gap: 50px;
+        }
+
+        navigation-bar navigation-bar-cover tabs buttons label {
+            height: fit-content;
+            width: 100px;
+            padding: 15px 0px;
+            color: #ffffff;
+            border-radius: calc(var(--border-radius) / 2);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        navigation-bar navigation-bar-cover tabs buttons label ion-icon {
+            scale: 1.5;
+        }
+
+        navigation-bar navigation-bar-cover tabs buttons underline {
+            position: absolute;
+            bottom: -13px;
+            left: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 8px;
+            width: 60px;
+            background-color: var(--body-bg-clr);
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        navigation-bar navigation-bar-cover tabs buttons underline::before {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            height: 8px;
+            width: 100%;
+            background-color: var(--body-bg-clr);
+            border-radius: 4px;
+            z-index: 0;
+            filter: blur(5px);
+        }
+
+        /*Animations*/
+
+        tabs input:nth-child(1):checked ~ buttons label:nth-child(1),
+        tabs input:nth-child(2):checked ~ buttons label:nth-child(2),
+        tabs input:nth-child(3):checked ~ buttons label:nth-child(3),
+        tabs input:nth-child(4):checked ~ buttons label:nth-child(4),
+        tabs input:nth-child(5):checked ~ buttons label:nth-child(5) {
+            color: var(--main-clr);
+            background-color: var(--body-bg-clr);
+            box-shadow: inset 2px 2px 10px #00000050, inset -2px -2px 10px #00000050,2px 2px 10px #00000050, -2px -2px 10px #00000050;
+        }
+
+        tabs input:nth-child(1):checked ~ buttons underline {
+            left: 20px;
+        }
+
+        tabs input:nth-child(2):checked ~ buttons underline {
+            left: 170px;
+        }
+
+        tabs input:nth-child(3):checked ~ buttons underline {
+            left: 320px;
+        }
+
+        tabs input:nth-child(4):checked ~ buttons underline {
+            left: 470px;
+        }
+
+        tabs input:nth-child(5):checked ~ buttons underline {
+            left: 620px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <navigation-bar>
+        <navigation-bar-cover>
+            <tabs>
+                <input type="radio" name="TabMenu" id="Settings">
+                <input type="radio" name="TabMenu" id="Profile">
+                <input type="radio" name="TabMenu" id="Home" checked>
+                <input type="radio" name="TabMenu" id="Messages">
+                <input type="radio" name="TabMenu" id="Help">
+                <buttons>
+                    <label for="Settings"><ion-icon name="settings-outline"></ion-icon></label>
+                    <label for="Profile"><ion-icon name="person-outline"></ion-icon></label>
+                    <label for="Home"><ion-icon name="home-outline"></ion-icon></label>
+                    <label for="Messages"><ion-icon name="chatbubbles-outline"></ion-icon></label>
+                    <label for="Help"><ion-icon name="help-outline"></ion-icon></label>
+                    <underline></underline>
+                </buttons>
+            </tabs>
+        </navigation-bar-cover>
+    </navigation-bar>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

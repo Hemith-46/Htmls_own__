@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --body-background-color: #10202b;
+    --nav-bar-background-color: #182d3c;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:  var(--body-background-color);
+}
+
+.tabs input {
+    visibility: hidden;
+    display: flex;
+}
+
+.buttons {
+    position: relative;
+    display: flex;
+    gap: 80px;
+    padding: 30px 40px;
+    border-bottom: 2px solid #ffffff20;
+    background: var(--nav-bar-background-color);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.buttons label {
+    width: 20%;
+    font-size: 1.75em;
+    -webkit-text-stroke: 1px #ffffff;
+    color: transparent;
+    opacity: 30%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.indicator {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    height: 5px;
+    width: 20%;
+    transition: 0.5s;
+}
+
+.indicator::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    filter: drop-shadow(0px 0px 10px #ffffff)  drop-shadow(0px 0px 50px #ffffff);
+}
+
+.indicator::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    filter: drop-shadow(0px 0px 10px #ffffff)  drop-shadow(0px 0px 20px #ffffff)  drop-shadow(0px 0px 30px #ffffff)  drop-shadow(0px 0px 50px #ffffff) blur(50px);
+}
+
+.buttons label:hover {
+    opacity: 1;
+    filter: drop-shadow(0px 0px 10px #ffffff) drop-shadow(0px 0px 20px #ffffff);
+}
+
+.tabs input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.tabs input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.tabs input:nth-child(3):checked ~ .buttons label:nth-child(3),
+.tabs input:nth-child(4):checked ~ .buttons label:nth-child(4),
+.tabs input:nth-child(5):checked ~ .buttons label:nth-child(5) {
+    color: #ffffff;
+    opacity: 1;
+    scale: 1.2;
+    filter: drop-shadow(0px 0px 10px #ffffff) drop-shadow(0px 0px 20px #ffffff);
+}
+
+.tabs input:nth-child(1):checked ~ .buttons .indicator {
+    left: 0;
+}
+.tabs input:nth-child(2):checked ~ .buttons .indicator {
+    left: 20%;
+}
+.tabs input:nth-child(3):checked ~ .buttons .indicator {
+    left: 40%;
+}
+.tabs input:nth-child(4):checked ~ .buttons .indicator {
+    left: 60%;
+}
+.tabs input:nth-child(5):checked ~ .buttons .indicator {
+    left: 80%;
+}

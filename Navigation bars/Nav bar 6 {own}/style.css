@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+    --main-clr: #2760ff;
+    --highlight-shadow-clr: #264fbf;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: var(--main-clr);
+}
+
+header .tabs {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 200px;
+}
+
+header .tabs input {
+    appearance: none;
+}
+
+header .tabs .buttons {
+    position: relative;
+    top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    gap: 40px;
+    align-items: center;
+    height: fit-content;
+    width: 200px;
+}
+
+header .tabs .buttons label {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 28%;
+    gap: 20px;
+    height: 50px;
+    width: 100%;
+    z-index: 1;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+header .tabs .buttons .highlight {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 0;
+    height: 50px;
+    width: 80%;
+    background-color: #ffffff;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    box-shadow: -5px -5px 5px var(--highlight-shadow-clr), -5px 5px 5px var(--highlight-shadow-clr);
+}
+
+.highlight::before {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    content: '';
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 10px 10px #ffffff;
+}
+
+.highlight::after {
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    content: '';
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 10px -10px #ffffff;
+}
+
+/*ANIMATIONS*/
+
+.tabs input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.tabs input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.tabs input:nth-child(3):checked ~ .buttons label:nth-child(3),
+.tabs input:nth-child(4):checked ~ .buttons label:nth-child(4),
+.tabs input:nth-child(5):checked ~ .buttons label:nth-child(5),
+.tabs input:nth-child(6):checked ~ .buttons label:nth-child(6),
+.tabs input:nth-child(7):checked ~ .buttons label:nth-child(7) {
+    color: var(--main-clr);
+}
+
+.tabs input:nth-child(1):checked ~ .buttons .highlight {
+    top: 0px;
+}
+
+.tabs input:nth-child(2):checked ~ .buttons .highlight {
+    top: 90px;
+}
+
+.tabs input:nth-child(3):checked ~ .buttons .highlight {
+    top: 180px;
+}
+
+.tabs input:nth-child(4):checked ~ .buttons .highlight {
+    top: 270px;
+}
+
+.tabs input:nth-child(5):checked ~ .buttons .highlight {
+    top: 360px;
+}
+
+.tabs input:nth-child(6):checked ~ .buttons .highlight {
+    top: 450px;
+}
+
+.tabs input:nth-child(7):checked ~ .buttons .highlight {
+    top: 540px;
+}

@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.2s;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background-color: dodgerblue;
+}
+
+.HeaderBtns {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.HeaderBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    gap: 16px;
+    margin: 10px 0px;
+}
+
+.HeaderBtnHeading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    color: dodgerblue;
+    height: 36px;
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.HeaderBtnElements {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    gap: 5px;
+    padding: 5px 0px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow:
+                2px 2px 5px #000000,
+                -2px -2px 5px white;
+    pointer-events: none;
+}
+
+.HeaderBtnElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 30px;
+    width: 90px;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.HeaderBtnElement:hover {
+    background-color: dodgerblue;
+}
+
+.HeaderBtn:hover .HeaderBtnElements {
+    display: flex;
+    pointer-events: all;
+}
