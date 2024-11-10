@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+    --Weak-Clr: #ff0000;
+    --Medium-Clr: #ffa500;
+    --Strong-Clr: #00ff00;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222222;
+}
+
+.topDecoration {
+    position: absolute;
+    top: 0px;
+    background: #ffffff;
+    display: flex;
+    height: 10px;
+    width: 100%;
+    filter:
+            blur(4px)
+            drop-shadow(0px 0px 10px #ffffff)
+            drop-shadow(0px 0px 20px #ffffff)
+            drop-shadow(0px 0px 30px #ffffff)
+            drop-shadow(0px 0px 50px #ffffff);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #333333;
+    width: 400px;
+    padding: 30px;
+    gap: 10px;
+    padding-bottom: 70px;
+    border: 1px solid #111111;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent,#0005);
+}
+
+.container h2 {
+    color: #666666;
+    font-weight: 500;
+}
+
+.container .inputBox {
+    position: relative;
+    width: 100%;
+}
+
+.container .inputBox input {
+    display: flex;
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    color: #ffffff;
+    background-color: #222222;
+    letter-spacing: 1px;
+}
+
+.container .strengthMeter {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    width: 100%;
+}
+
+.container .strengthMeter::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.container.weak .strengthMeter::before {
+    width: 10%;
+    background-color: var(--Weak-Clr);
+    filter: drop-shadow(0px 0px 5px var(--Weak-Clr));
+}
+
+.container.blank .strengthMeter::before {
+    width: 0%;
+    background-color: var(--Weak-Clr);
+    filter: drop-shadow(0px 0px 5px var(--Weak-Clr));
+}
+
+.container.medium .strengthMeter::before {
+    width: 66.66%;
+    background-color: var(--Medium-Clr);
+    filter: drop-shadow(0px 0px 5px var(--Medium-Clr));
+}
+
+.container.strong .strengthMeter::before {
+    width: 100%;
+    background-color: var(--Strong-Clr);
+    filter: drop-shadow(0px 0px 5px var(--Strong-Clr));
+}
+
+.container .strengthMeter::after {
+    content: '';
+    position: absolute;
+    top: -65px;
+    left: 30px;
+}
+
+.container.weak .strengthMeter::after {
+    color: var(--Weak-Clr);
+    content: 'Your password is weak';
+    filter: drop-shadow(0px 0px 5px var(--Weak-Clr));
+}
+
+.container.medium .strengthMeter::after {
+    content: 'Your password is medium';
+    color: var(--Medium-Clr);
+    filter: drop-shadow(0px 0px 5px var(--Medium-Clr));
+}
+
+.container.strong .strengthMeter::after {
+    content: 'Your password is strong';
+    color: var(--Strong-Clr);
+    filter: drop-shadow(0px 0px 5px var(--Strong-Clr));
+}
+
+.container .inputBox .show {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 60px;
+    font-size: 0.8em;
+    font-weight: 600;
+    background-color: #333333;
+    border: 6px solid #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.show::before {
+    content: 'Show';
+    font-size: 0.7em;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.show.hide::before {
+    content: 'Hide';
+    font-size: 0.7em;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
