@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.5s;
+    --Theme-Blue-Clr: #00B4FF;
+    --Theme-Orange-Clr: #FF7C00;
+    --Theme-White-Clr: #edf1f4;
+    --Glow-Height-Width: 140px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("Bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aliceblue {
+    color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+}
+
+.Glow {
+    position: absolute;
+    display: flex;
+    height: var(--Glow-Height-Width);
+    width: var(--Glow-Height-Width);
+    border-radius: 50%;
+    filter: blur(30px);
+    z-index: 1;
+}
+
+.BlueGlow {
+    background: linear-gradient(var(--Theme-Blue-Clr), rgb(66, 66, 255));
+    left: calc(var(--Glow-Height-Width) / -2);
+    top: calc(var(--Glow-Height-Width) / -2);
+}
+
+.OrangeGlow {
+    background: linear-gradient(var(--Theme-Orange-Clr), rgb(182, 97, 0));
+    right: calc(var(--Glow-Height-Width) / -2);
+    bottom: calc(var(--Glow-Height-Width) / -2);
+}
+
+/* Animations */
+.Glow {
+    animation: ArrivalAnimation-glow 3s;
+}
+
+.Glow:hover {
+    scale: 3;
+}
+
+.Heading {
+    animation: ArrivalAnimation-1 1s;
+}
+
+.Greetings {
+    animation: ArrivalAnimation-2 2s;
+}
+
+.InputCover {
+    animation: ArrivalAnimation-3 1.5s;
+}
+
+.RegistrationInputSubmitBtn,
+.LoginInputSubmitBtn {
+    animation: ArrivalAnimation-4 2s;
+}
+
+.RegistrationConfirmation,
+.LoginConfirmation {
+animation: ArrivalAnimation-5 2s;
+}

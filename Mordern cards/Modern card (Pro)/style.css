@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s;
+    --Theme-Light-Clr: #3ab1a3;
+    --Theme-Dark-Clr: #0e3f3a;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+    background-color: black;
+    width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #279eda;
+    border-radius: 3px;
+}
+
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--Theme-Dark-Clr);
+}
+
+.Card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    scale: 2;
+}
+
+.Video {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 200px;
+    background-color: #3ab1a3;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.Video::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 47px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: -5px 5px 0.1px var(--Theme-Dark-Clr);
+}
+
+.Video::after {
+    content: '';
+    position: absolute;
+    left: 49.5px;
+    bottom: 0px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: -5px 5px 0.1px var(--Theme-Dark-Clr);
+}
+
+.Video:hover {
+    background-color: #256f67;
+}
+
+.Circle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #b552dc;
+    left: -25%;
+    border: 4px solid var(--Theme-Dark-Clr);
+    z-index: 3;
+}
+
+.Circle:hover {
+    background-color: #75348e;
+}
+
+.Description {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 180px;
+    background-color: #279eda;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.Description::before {
+    content: '';
+    position: absolute;
+    left: 49.5px;
+    top: 0px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: -5px -5px 0.1px var(--Theme-Dark-Clr);
+}
+
+.Description::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 42.5px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: -5px -5px 0.1px var(--Theme-Dark-Clr);
+}
+
+.Description:hover {
+    background-color: #1a6a92;
+}
+
+button {
+    position: absolute;
+    bottom: -13px;
+    display: flex;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 1px 10px;
+    border-radius: 15px;
+    background-color: white;
+    border: 5px solid #279eda;
+    transition: 0.5s;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: -12px;
+    height: 8px;
+    width: 8px;
+    border-top-right-radius: 4px;
+    box-shadow: 4px -4px #279eda;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: -12px;
+    height: 8px;
+    width: 8px;
+    border-top-left-radius: 4px;
+    box-shadow: -4px -4px #279eda;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+button:hover {
+    letter-spacing: 2px;
+}
+
+.Description:hover button {
+    border: 5px solid #1a6a92;
+}
+
+.Description:hover button::before {
+    box-shadow: 4px -4px #1a6a92;
+    transition: 0.5s;
+}
+
+.Description:hover button::after {
+    box-shadow: -4px -4px #1a6a92;
+    transition: 0.5s;
+}

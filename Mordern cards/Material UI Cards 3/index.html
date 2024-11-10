@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Material UI Cards</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="row row1">
+            <div class="card Stylish"></div>
+            <div class="card Side"></div>
+        </div>
+        <div class="row2">
+            <div class="card Taillamp"></div>
+            <div class="card Rear"></div>
+        </div>
+
+    </div>
+
+    <script>
+
+        const Card = document.querySelectorAll('.card')
+    
+        Card.forEach(Card => {
+            Card.onmousemove = function(e){
+                let x = e.pageX - Card.offsetLeft;
+                let y = e.pageY - Card.offsetTop;
+    
+                Card.style.setProperty('--x', x + 'px');
+                Card.style.setProperty('--y', y + 'px');
+            }
+        });
+    
+    </script>
+
+</body>
+
+</html>

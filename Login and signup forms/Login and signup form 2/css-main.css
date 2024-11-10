@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: 0.5s;
+    --clr-1: #fe6f5e;
+    --clr-2: #0014a8;
+    --input-svg-fill-and-stroke-clr: #181818;
+    --glow-translation: -2px;
+}
+
+body {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--clr-1);
+    overflow: hidden;
+}
+
+.box-brown {
+    display: flex;
+    position: absolute;
+    left: -100%;
+    top: -100%;
+    height: 200%;
+    width: 200%;
+    background-color: var(--clr-1);
+    transform: rotate(30deg);
+    box-shadow: 0px 0px 5px var(--clr-1), 0px 0px 25px var(--clr-1), 0px 0px 50px var(--clr-1);
+    z-index: -1;
+}
+
+.box-blue {
+    display: flex;
+    position: absolute;
+    right: -125%;
+    bottom: -100%;
+    height: 200%;
+    width: 200%;
+    background-color: var(--clr-2);
+    transform: rotate(30deg);
+    box-shadow: 0px 0px 5px var(--clr-2), 0px 0px 25px var(--clr-2), 0px 0px 50px var(--clr-2);
+    z-index: 0;
+}
+
+.input-cover svg path {
+    fill: var(--input-svg-fill-and-stroke-clr);
+}
+
+.Email-input-cover svg rect,
+.Email-input-cover svg polyline {
+    stroke: var(--input-svg-fill-and-stroke-clr);
+}
+
+.input-cover .blue-box {
+    position: absolute;
+    left: var(--glow-translation);
+    display: flex;
+    height: 50px;
+    width: 20px;
+    background-color: var(--clr-2);
+}
+
+svg {
+    height: 25px;
+    width: 25px;
+}
+
+.Alternative-registration-Btns svg path {
+    fill: var(--clr-1);
+}
+
+a {
+    text-decoration: none;
+}
+
+.aliceblue {
+    color: aliceblue;
+}
+
+.section {
+    display: flex;
+}

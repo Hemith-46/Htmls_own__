@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #181818;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 800px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: saturate(0.4);
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+.card .details {
+    position: absolute;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 360px;
+    filter: saturate(0.4);
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: 0.5s;
+}
+
+.card .details .Heading {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.card .details .MainDetails {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.Winter {
+    background-image: url("img-Winter.jpg");
+}
+
+.Monsoon {
+    background-image: url("img-Monsoon.jpg");
+}
+
+.Spring {
+    background-image: url("img-Spring.jpg");
+}
+
+.Summer {
+    background-image: url("img-Summer.jpg");
+}
+
+.card:hover {
+    filter: saturate(1.5);
+    width: 300%;
+}
+
+.card:hover .details {
+    filter: saturate(1);
+    opacity: 1;
+    transform: translate(0px);
+}

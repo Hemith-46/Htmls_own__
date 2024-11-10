@@ -1,0 +1,167 @@
+@import url("css-main.css");
+
+.signup-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    overflow: hidden;
+    background-color: #f0f0f010;
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #ffffff20;
+}
+
+.glow {
+    position: absolute;
+    display: flex;
+    height: 120px;
+    width:120px;
+    z-index: -1;
+    filter: blur(50px);
+}
+
+.glow-pink {
+    background-color: var(--theme-pink-light-shade-clr);
+    left: var(--glow-left-right-top-bottom-translation);
+    top: var(--glow-left-right-top-bottom-translation);
+}
+
+.glow-blue {
+    background-color: var(--theme-blue-light-shade-clr);
+    right: var(--glow-left-right-top-bottom-translation);
+    bottom: var(--glow-left-right-top-bottom-translation);
+}
+
+.signup-form-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form .signup-form-cover .heading {
+    display: block;
+    font-weight: bold;
+    font-size: 2em;
+    text-shadow: 0px 0px 4px #fff0ff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.signup-form .signup-form-cover .greetings {
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.signup-form-cover .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.signup-form-cover .inputs input {
+    display: flex;
+    height: 40px;
+    width: 300px;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 0px 15px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    background: linear-gradient(120deg, #08457e30, #fc0fc030);
+    outline: none;
+    border: none;
+}
+
+.signup-form .signup-form-cover .inputs input::placeholder {
+    color: rgb(206, 206, 206);
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.signup-form .signup-form-cover .Sighup-Btn-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: 2px solid;
+    cursor: pointer;
+}
+
+.signup-form .confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    margin-top: 30px;
+    gap: 5px;
+}
+
+.signup-form .confirmation .confirmation-Btn {
+    display: flex;
+    text-align: left;
+}
+
+.signupButtons-text {
+    margin-top: 10px;
+}
+
+.signup-Buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.signup-Buttons .signupButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 6px;
+    border: 2px solid #00000030;
+    cursor: pointer;
+}
+
+/* Animations */
+.signup-form:hover {
+    background-color: #18181810;
+    box-shadow: 4px 4px 4px #ffffff40,
+                8px 8px 8px #00000040,
+                inset 4px 4px 4px #ffffff40,
+                inset 8px 8px 8px #00000040;
+}
+
+.signup-form .signup-form-cover .inputs input:focus {
+    box-shadow: 0px 0px 20px aliceblue;
+}
+
+.signup-form .signup-form-cover .inputs input:invalid {
+    color: #ff8a8a;
+    text-shadow: 0px 0px 25px #ff8a8a;
+}
+
+.signup-form .confirmation .confirmation-Btn:hover {
+    color: var(--theme-blue-light-shade-clr);
+    filter: drop-shadow(0px 0px 20px #6abaff);
+}
+
+.signup-form .signup-form-cover .Sighup-Btn-submit:hover {
+    background-color: #6abaff;
+    border: 2px solid #6abaff;
+    color: var(--theme-blue-dark-shade-clr);
+    box-shadow: 0px 0px 20px #6abaff;
+}

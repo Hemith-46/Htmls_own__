@@ -1,0 +1,176 @@
+@import url("css-main.css");
+
+.login-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    overflow: hidden;
+    background-color: #f0f0f010;
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #ffffff20;
+}
+
+.glow {
+    position: absolute;
+    display: flex;
+    height: 120px;
+    width:120px;
+    z-index: -1;
+    filter: blur(50px);
+}
+
+.glow-pink {
+    background-color: var(--theme-pink-light-shade-clr);
+    left: var(--glow-left-right-top-bottom-translation);
+    top: var(--glow-left-right-top-bottom-translation);
+}
+
+.glow-blue {
+    background-color: var(--theme-blue-light-shade-clr);
+    right: var(--glow-left-right-top-bottom-translation);
+    bottom: var(--glow-left-right-top-bottom-translation);
+}
+
+.login-form-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form .login-form-cover .heading {
+    display: block;
+    font-weight: bold;
+    font-size: 2em;
+    text-shadow: 0px 0px 4px #fff0ff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.login-form .login-form-cover .greetings {
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.login-form-cover .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.login-form-cover .inputs input {
+    display: flex;
+    height: 40px;
+    width: 300px;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 0px 15px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    background: linear-gradient(120deg, #08457e30, #fc0fc030);
+    outline: none;
+    border: none;
+}
+
+.login-form-cover .inputs .Forgot-password-Btn {
+    display: flex;
+    justify-content: right;
+    height: fit-content;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.login-form .login-form-cover .inputs input::placeholder {
+    color: rgb(206, 206, 206);
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.login-form .login-form-cover .login-Btn-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: 2px solid;
+    cursor: pointer;
+}
+
+.login-form .confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    margin-top: 30px;
+    gap: 5px;
+}
+
+.login-form .confirmation .confirmation-Btn {
+    display: flex;
+    text-align: left;
+}
+
+.loginButtons-text {
+    margin-top: 10px;
+}
+
+.login-Buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.login-Buttons .loginButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 6px;
+    border: 2px solid #00000030;
+    cursor: pointer;
+}
+
+/* Animations */
+.login-form:hover {
+    background-color: #18181810;
+    box-shadow: 4px 4px 4px #ffffff40,
+                8px 8px 8px #00000040,
+                inset 4px 4px 4px #ffffff40,
+                inset 8px 8px 8px #00000040;
+}
+
+.login-form .login-form-cover .inputs input:focus {
+    box-shadow: 0px 0px 20px aliceblue;
+}
+
+.login-form .login-form-cover .inputs input:invalid {
+    color: #ff8a8a;
+    text-shadow: 0px 0px 25px #ff8a8a;
+}
+
+.login-form .confirmation .confirmation-Btn:hover {
+    color: rgb(144, 30, 144);
+    text-shadow: 0px 0px 20px var(--theme-pink-light-shade-clr);
+}
+
+.login-form .login-form-cover .login-Btn-submit:hover {
+    background-color: var(--theme-pink-light-shade-clr);
+    border: 2px solid var(--theme-pink-light-shade-clr);
+    color: var(--theme-pink-dark-shade-clr);
+    box-shadow: 0px 0px 20px var(--theme-pink-light-shade-clr);
+}

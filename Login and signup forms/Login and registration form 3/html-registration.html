@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-main.css">
+    <link rel="stylesheet" href="css-animation.css">
+    <link rel="stylesheet" href="css-registration.css">
+    <title>Registration Form | Mana IT Solutions</title>
+</head>
+<body>
+    <div class="container">
+        <div class="RegistraionForm">
+
+            <div class="BlueGlow Glow"></div>
+            <div class="OrangeGlow Glow"></div>
+
+
+            <div class="Heading aliceblue">Registration</div>
+            <div class="Greetings aliceblue">Hey there, welcome to Mana IT Solutions</div>
+            <div class="inputs">
+                <div class="InputCover">
+                    <input
+                    type="text"
+                    title="Required, Usename"
+                    name="RegistraionFormInput"
+                    id="RegistrationInput"
+                    class="RegistrationInput"
+                    required>
+                    <span class="aliceblue">Username</span>
+                </div>
+                <div class="InputCover">
+                    <input
+                    type="email"
+                    title="Required, Enter your email ID"
+                    name="RegistraionFormInput"
+                    id="RegistrationInput"
+                    class="RegistrationInput"
+                    pattern=".+.com"
+                    required>
+                    <span class="aliceblue">Email ID</span>
+                </div>
+                <div class="InputCover">
+                    <input
+                    type="password"
+                    title="Required, Must be atleast 8 characters"
+                    name="RegistraionFormInput"
+                    id="RegistrationInput"
+                    class="RegistrationInput"
+                    pattern=".{8,}"
+                    required="minimum 8 characters">
+                    <span class="aliceblue">Password</span>
+                </div>
+                <div class="RegistrationInputSubmitBtnCover">
+                    <a
+                    href="html-login.html"
+                    type="submit"
+                    name="RegistraionFormInput"
+                    id="RegistrationInputSubmitBtn"
+                    class="RegistrationInputSubmitBtn aliceblue">Register</a>
+                </div>
+                
+            </div>
+            <div class="RegistrationConfirmation">
+                <div class="RegistrationConfirmationText aliceblue">Do you have an account?</div>
+                <a href="html-login.html" class="RegistrationConfirmationBtn">Login here</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

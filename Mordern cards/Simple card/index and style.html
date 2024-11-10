@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple cadr | 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: 0.5s;
+            --translation-distance-before: -117px;
+            --translation-distance-after: -260px;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 50px;
+            width: 200px;
+            border-radius: 10px;
+            background: transparent;
+            box-shadow: 0px 0px 90px black;
+            cursor: pointer;
+            z-index: 3;
+            overflow: hidden;
+        }
+
+        .Content {
+            display: flex;
+            text-align: center;
+            z-index: 3;
+        }
+
+        .color-box {
+            transform: rotate(30deg);
+        }
+
+        .lightbluebox {
+            display: flex;
+            position: absolute;
+            left: var(--translation-distance-before);
+            background-color: rgb(89, 145, 166);
+            height: 260px;
+            width: 200px;
+            box-shadow: 0px 0px 25px #2b2b2b;
+            z-index: 2;
+        }
+        .lightbluebox:hover {
+            background-color: rgba(173, 216, 230, 1);
+        }
+        
+        .pinkbox {
+            display: flex;
+            position: absolute;
+            right: var(--translation-distance-before);
+            background-color: rgb(163, 102, 112);
+            height: 260px;
+            width: 200px;
+            z-index: 1;
+        }
+        .pinkbox:hover {
+            background-color: rgba(255, 192, 203, 1);
+        }
+    </style>
+</head>
+<body>
+    <a class="button">
+        <div id="Content"></div>
+        <div class="color-box lightbluebox"></div>
+        <div class="color-box pinkbox"></div>
+    </a>
+</body>
+</html>

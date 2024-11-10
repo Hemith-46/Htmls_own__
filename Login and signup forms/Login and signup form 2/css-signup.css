@@ -1,0 +1,160 @@
+/* Main */
+.registration-and-login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 3;
+}
+
+.registration-form-cover {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Left side */
+.Left-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.input-cover {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin: 5px 0px;
+    height: fit-content;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.input-cover input {
+    position: relative;
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    padding: 0px 15px 0px 45px;
+    border: none;
+    outline: none;
+    background-color: #00000040;
+    color: aliceblue;
+    backdrop-filter: blur(20px);
+    letter-spacing: 1px;
+}
+
+.input-cover input::placeholder {
+    color: #e4e4e4;
+    font-weight: bold;
+    letter-spacing: 0px;
+}
+
+.input-cover span {
+    position: absolute;
+    left: 15px;
+    top: 6px;
+}
+
+.Submit-Btn {
+    color: aliceblue;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid;
+    margin: 15px 0px;
+    font-size: 1.1em;
+}
+
+.Confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.Confirmation-text {
+    display: flex;
+}
+
+.Confirmation-Btn {
+    display: flex;
+    color: var(--clr-1);
+    text-shadow: 0px 0px 25px #000000, 0px 0px 5px #000000;
+}
+
+.Confirmation input:checked + .Confirmation label {
+    background-color: blue;
+}
+
+/* Right side */
+.Right-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+    text-align: right;
+}
+
+.Heading,
+.Greetings,
+.Alternative-registration-text {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    font-size: 2.1em;
+}
+
+.Heading {
+    margin-bottom: 5px;
+}
+
+.Greetings {
+    margin-bottom: 30px;
+}
+
+.Alternative-registration-text {
+    margin-bottom: 5px;
+    font-size: 1.3em;
+}
+
+.Alternative-registration-Btns {
+    display: flex;
+    justify-content: right;
+    height: fit-content;
+    width: 100%;
+    gap: 10px;
+}
+
+.Alternative-registration-Btns .btnLogo {
+    display: flex;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+/* Animations / reactions */
+.input-cover:hover {
+    scale: 1.1;
+    box-shadow: 0px 0px 2px aliceblue, 0px 0px 3px aliceblue, 0px 0px 5px aliceblue, 0px 0px 25px aliceblue;
+}
+
+.Submit-Btn:hover {
+    color: #8f433a;
+    background-color: var(--clr-1);
+    border: 2px solid var(--clr-1);
+    box-shadow: 0px 0px 10px #8f433a, 0px 0px 25px #8f433a;
+}

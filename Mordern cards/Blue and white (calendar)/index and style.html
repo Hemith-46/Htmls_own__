@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar card (blue and white)</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: 0.5s;
+            --card-main-theme-color: #08457e40;
+            --card-main-light-color: #f0f8ff20;
+            --card-text-color: #f0f8ff;
+            --card-calendar-day-color: #08457e;
+            --card-calendar-date-color: #f0f8ff;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("AI generated.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        .cover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        .calendar-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            background-color: var(--card-main-theme-color);
+            backdrop-filter: blur(20px);
+            overflow: hidden;
+        }
+
+        .today-date-and-more {
+            position: relative;
+            display: flex;
+            height: fit-content;
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 20px;
+            cursor: default;
+        }
+
+        .today-date {
+            font-size: 1.2em;
+            color: var(--card-text-color);
+            width: 100%;
+        }
+
+        .year {
+            padding-bottom: 5px;
+        }
+
+        .month-and-day {
+            display: flex;
+            flex-direction: row;
+            font-size: 1.2em;
+            gap: 5px;
+        }
+
+        .month {
+            font-size: 1.5em;
+            display: flex;
+            justify-content: left;
+            align-items: end;
+        }
+
+        .day {
+            display: flex;
+            justify-content: left;
+            align-items: end;
+            padding-bottom: 3px;
+        }
+
+        .calendar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .calendar-cover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 10px;
+            background-color: var(--card-main-theme-color);
+            border-radius: 10px;
+        }
+
+        .Mon, .Tue, .Wed, .Thur, .Fri, .Sat, .Sun {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calendar-cover .calendar-day {
+            color: var(--card-calendar-day-color);
+        }
+
+        .calendar-date {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            height: 30px;
+            width: 30px;
+            cursor: default;
+        }
+
+        .Mon .calendar-date:nth-child(4) {
+            background-color: var(--card-calendar-day-color);
+        }
+
+        .calendar-cover .calendar-date {
+            color: var(--card-calendar-date-color);
+        }
+
+        .Mon .calendar-date:nth-child(2),
+        .Fri .calendar-date:nth-child(6),
+        .Sat .calendar-date:nth-child(6),
+        .Sun .calendar-date:nth-child(6) {
+            color: rgb(185, 185, 185);
+        }
+
+        .details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px;
+            gap: 200px;
+            border-radius: 20px;
+            background-color: #f0f8ff;
+            font-size: 3em;
+            font-weight: bold;
+            box-shadow: -10px 0px 25px var(--card-calendar-date-color), -20px 0px 50px var(--card-calendar-date-color);
+        }
+
+        .right-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .time {
+            cursor: default;
+        }
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 54px;
+            width: 54px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .humbleicons--wifi {
+            cursor: pointer;
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%2308457e' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 8.437c-5.115-4.583-12.885-4.583-18 0m15.333 2.982a9.5 9.5 0 0 0-12.666 0m10 2.981a5.5 5.5 0 0 0-7.334 0M12 18.5l1-1.118a1.5 1.5 0 0 0-2 0z'/%3E%3C/svg%3E");
+        }
+
+        .humbleicons--wifi:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 8.437c-5.115-4.583-12.885-4.583-18 0m15.333 2.982a9.5 9.5 0 0 0-12.666 0m10 2.981a5.5 5.5 0 0 0-7.334 0M12 18.5l1-1.118a1.5 1.5 0 0 0-2 0z'/%3E%3C/svg%3E");
+        }
+
+        .mingcute--volume-fill {
+            cursor: pointer;
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none'%3E%3Cpath d='m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z'/%3E%3Cpath fill='%2308457e' d='M13.26 3.3a1.1 1.1 0 0 1 1.734.78l.006.114v15.612a1.1 1.1 0 0 1-1.643.957l-.096-.062L6.68 16H4a2 2 0 0 1-1.995-1.85L2 14v-4a2 2 0 0 1 1.85-1.995L4 8h2.68zm6.407 3.483A7 7 0 0 1 22 12a7 7 0 0 1-2.333 5.217a1 1 0 1 1-1.334-1.49A5 5 0 0 0 20 12c0-1.48-.642-2.81-1.667-3.727a1 1 0 1 1 1.334-1.49m-2 2.236A4 4 0 0 1 19 11.999a4 4 0 0 1-1.333 2.982a1 1 0 0 1-1.422-1.4l.088-.09c.41-.368.667-.899.667-1.491a2 2 0 0 0-.548-1.376l-.119-.115a1 1 0 1 1 1.334-1.49'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .mingcute--volume-fill:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none'%3E%3Cpath d='m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z'/%3E%3Cpath fill='%23000000' d='M13.26 3.3a1.1 1.1 0 0 1 1.734.78l.006.114v15.612a1.1 1.1 0 0 1-1.643.957l-.096-.062L6.68 16H4a2 2 0 0 1-1.995-1.85L2 14v-4a2 2 0 0 1 1.85-1.995L4 8h2.68zm6.407 3.483A7 7 0 0 1 22 12a7 7 0 0 1-2.333 5.217a1 1 0 1 1-1.334-1.49A5 5 0 0 0 20 12c0-1.48-.642-2.81-1.667-3.727a1 1 0 1 1 1.334-1.49m-2 2.236A4 4 0 0 1 19 11.999a4 4 0 0 1-1.333 2.982a1 1 0 0 1-1.422-1.4l.088-.09c.41-.368.667-.899.667-1.491a2 2 0 0 0-.548-1.376l-.119-.115a1 1 0 1 1 1.334-1.49'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .ci--hamburger-md {
+            cursor: pointer;
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%2308457e' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M5 17h14M5 12h14M5 7h14'/%3E%3C/svg%3E");
+        }
+
+        .ci--hamburger-md:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M5 17h14M5 12h14M5 7h14'/%3E%3C/svg%3E");
+        }
+
+        .weui--more-filled {
+            cursor: pointer;
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            scale: 2;
+            margin-right: 5px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f0f8ff' fill-rule='evenodd' d='M7 12a2 2 0 1 1-4 0a2 2 0 0 1 4 0m5-2a2 2 0 1 1 0 4a2 2 0 0 1 0-4m7 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4'/%3E%3C/svg%3E");
+        }
+
+        .weui--more-filled:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2308457e' fill-rule='evenodd' d='M7 12a2 2 0 1 1-4 0a2 2 0 0 1 4 0m5-2a2 2 0 1 1 0 4a2 2 0 0 1 0-4m7 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4'/%3E%3C/svg%3E");
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cover">
+            <div class="calendar-card">
+                <div class="today-date-and-more">
+                    <div class="today-date">
+                        <div class="year">2024</div>
+                        <div class="month-and-day">
+                            <div class="month">October,</div>
+                            <div class="day">Monday</div>
+                        </div>
+                    </div>
+                    <div class="more">
+                        <span class="weui--more-filled"></span>
+                    </div>
+                </div>
+                <div class="calendar">
+                    <div class="calendar-cover">
+                        <div class="Mon">
+                            <div class="calendar-day">Mon</div>
+                            <div class="calendar-date">30</div>
+                            <div class="calendar-date">7</div>
+                            <div class="calendar-date">14</div>
+                            <div class="calendar-date">21</div>
+                            <div class="calendar-date">28</div>
+                        </div>
+                        <div class="Tue">
+                            <div class="calendar-day">Tue</div>
+                            <div class="calendar-date">1</div>
+                            <div class="calendar-date">8</div>
+                            <div class="calendar-date">15</div>
+                            <div class="calendar-date">22</div>
+                            <div class="calendar-date">29</div>
+                        </div>
+                        <div class="Wed">
+                            <div class="calendar-day">Wed</div>
+                            <div class="calendar-date">2</div>
+                            <div class="calendar-date">9</div>
+                            <div class="calendar-date">16</div>
+                            <div class="calendar-date">23</div>
+                            <div class="calendar-date">30</div>
+                        </div>
+                        <div class="Thur">
+                            <div class="calendar-day">Thur</div>
+                            <div class="calendar-date">3</div>
+                            <div class="calendar-date">10</div>
+                            <div class="calendar-date">17</div>
+                            <div class="calendar-date">24</div>
+                            <div class="calendar-date">31</div>
+                        </div>
+                        <div class="Fri">
+                            <div class="calendar-day">Fri</div>
+                            <div class="calendar-date">4</div>
+                            <div class="calendar-date">11</div>
+                            <div class="calendar-date">18</div>
+                            <div class="calendar-date">25</div>
+                            <div class="calendar-date">1</div>
+                        </div>
+                        <div class="Sat">
+                            <div class="calendar-day">Sat</div>
+                            <div class="calendar-date">5</div>
+                            <div class="calendar-date">12</div>
+                            <div class="calendar-date">19</div>
+                            <div class="calendar-date">26</div>
+                            <div class="calendar-date">2</div>
+                        </div>
+                        <div class="Sun">
+                            <div class="calendar-day">Sun</div>
+                            <div class="calendar-date">6</div>
+                            <div class="calendar-date">13</div>
+                            <div class="calendar-date">20</div>
+                            <div class="calendar-date">27</div>
+                            <div class="calendar-date">3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="left-details time">
+                        4:13
+                    </div>
+                    <div class="right-details">
+                        <div class="icon wifi-icon">
+                            <span class="humbleicons--wifi"></span>
+                        </div>
+                        <div class="icon volume-icon">
+                            <span class="mingcute--volume-fill"></span>
+                        </div>
+                        <div class="icon more-icon">
+                            <span class="ci--hamburger-md"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

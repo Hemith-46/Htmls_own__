@@ -1,0 +1,35 @@
+/* Main */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s;
+    --theme-blue-light-shade-clr: #08457e;
+    --theme-pink-light-shade-clr: #fc0fc0;
+    --theme-blue-dark-shade-clr: #113150;
+    --theme-pink-dark-shade-clr: #9e0878;
+    --white-light-clr: aliceblue;
+    --glow-left-right-top-bottom-translation: -60px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(120deg,#6abaff,#ff4f95);
+}
+
+a {
+    text-decoration: none;
+}
+
+.aliceblue {
+    color: aliceblue;
+}
+
+.center-text {
+    text-align: center;
+}

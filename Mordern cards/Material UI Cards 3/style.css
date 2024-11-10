@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #181818;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    height: 800px;
+    width: 500px;
+    gap: 10px;
+}
+
+.row1, .row2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 500px;
+    gap: 10px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 250px;
+    border-radius: 30px;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: saturate(0.4);
+    transition: 0.5s;
+}
+
+.Stylish {
+    background-image: url("Images/SupraStylishView.webp");
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.Side {
+    background-image: url("Images/SupraSideview.webp");
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.Taillamp {
+    background-image: url("Images/SupraTaillamps.webp");
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.Rear {
+    background-image: url("Images/SupraRearView.webp");
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.card:hover {
+    filter: saturate(1.5);
+    width: 200%;
+}
+
+.card:hover::before {
+    opacity: 1;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Material UI Cards</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="card Winter" style="--clr:#3b5ca3;"></div>
+
+        <div class="card Monsoon" style="--clr:#084a08;"></div>
+
+        <div class="card Spring" style="--clr:#805073;"></div>
+
+        <div class="card Summer" style="--clr:#bd9d80;"></div>
+
+    </div>
+
+    <script>
+
+        const Card = document.querySelectorAll('.card')
+    
+        Card.forEach(Card => {
+            Card.onmousemove = function(e){
+                let x = e.pageX - Card.offsetLeft;
+                let y = e.pageY - Card.offsetTop;
+    
+                Card.style.setProperty('--x', x + 'px');
+                Card.style.setProperty('--y', y + 'px');
+            }
+        });
+    
+    </script>
+
+</body>
+
+</html>
