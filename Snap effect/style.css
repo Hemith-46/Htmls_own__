@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Container {
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.One {
+    background-color: #ffffff;
+}
+
+.Two {
+    background-color: #d5d5d5;
+}
+
+.Three {
+    background-color: #aeaeae;
+}
+
+.Four {
+    background-color: #797979;
+}
+
+.Five {
+    background-color: #373737;
+}
+
+.Six {
+    background-color: #1b1b1b;
+}
