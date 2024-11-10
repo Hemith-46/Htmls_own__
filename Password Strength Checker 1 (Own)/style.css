@@ -1,0 +1,281 @@
+@import url("animations.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+    --TopDecoration-Clr: #ffffff;
+    --Weak-Clr: #ff0000;
+    --Medium-Clr: #ffa500;
+    --Strong-Clr: #00ff00;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222222;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #333333;
+    width: 400px;
+    padding: 30px;
+    gap: 10px;
+    padding-bottom: 70px;
+    border-radius: 15px;
+    transition: 0.5s;
+    -webkit-box-reflect: below 1px linear-gradient(
+                                                    transparent,
+                                                    transparent,
+                                                    #0005
+    );
+}
+
+.container:hover {
+    box-shadow:
+                inset 5px 5px 5px #ffffff40,
+                inset 5px 5px 5px #000000,
+                5px 5px 5px #ffffff40,
+                5px 5px 5px #000000
+                ;
+}
+
+.container h2 {
+    color: #666666;
+    font-weight: 500;
+    animation: Animation1 1s linear;
+}
+
+.container .inputBox {
+    position: relative;
+    width: 100%;
+}
+
+.container .strengthMeter {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    height: 5px;
+    width: 340px;
+}
+
+.container .strengthMeter::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.container.weak .strengthMeter::before {
+    width: 10%;
+    border-radius: 3px;
+    background-color: var(
+                        --Weak-Clr
+    );
+    filter: drop-shadow(
+                        0px 0px 5px var(
+                        --Weak-Clr
+    ));
+}
+
+.container.medium .strengthMeter::before {
+    width: 66.66%;
+    border-radius: 3px;
+    background-color: var(
+                        --Medium-Clr
+    );
+    filter: drop-shadow(
+                        0px 0px 5px var(
+                        --Medium-Clr
+    ));
+}
+
+.container.strong .strengthMeter::before {
+    width: 100%;
+    border-radius: 3px;
+    background-color: var(
+                        --Strong-Clr
+    );
+    filter: drop-shadow(
+                        0px 0px 5px var(
+                        --Strong-Clr
+    ));
+}
+
+.container .strengthMeter::after {
+    content: '';
+    position: absolute;
+    top: -32px;
+    left: 0px;
+}
+
+.container.weak .strengthMeter::after {
+    color: var(
+                        --Weak-Clr
+    );
+    content: 'Your password is weak';
+    filter: drop-shadow(
+                        px 0px 5px var(
+                        --Weak-Clr
+    ));
+}
+
+.container.medium .strengthMeter::after {
+    content: 'Your password is medium';
+    color: var(
+                        --Medium-Clr
+    );
+    filter: drop-shadow(
+                        0px 0px 5px var(
+                        --Medium-Clr
+    ));
+}
+
+.container.strong .strengthMeter::after {
+    content: 'Your password is strong';
+    color: var(
+                        --Strong-Clr
+    );
+    filter: drop-shadow(
+                        0px 0px 5px var(
+                        --Strong-Clr
+    ));
+}
+
+.container.weak .container:hover {
+    box-shadow:
+                inset 5px 5px 5px var(
+                    --Weak-Clr
+                ),
+                inset 5px 5px 5px #000000,
+                5px 5px 5px var(
+                    --Weak-Clr
+                ),
+                5px 5px 5px #000000
+                ;
+}
+
+.container.medium .container:hover {
+    box-shadow:
+                inset 5px 5px 5px var(
+                    --Medium-Clr
+                ),
+                inset 5px 5px 5px #000000,
+                5px 5px 5px var(
+                    --Medium-Clr
+                ),
+                5px 5px 5px #000000
+                ;
+}
+
+.container.strong .container:hover {
+    box-shadow:
+                inset 5px 5px 5px var(
+                    --Strong-Clr
+                ),
+                inset 5px 5px 5px #000000,
+                5px 5px 5px var(
+                    --Strong-Clr
+                ),
+                5px 5px 5px #000000
+                ;
+}
+
+.topDecoration {
+    position: absolute;
+    top: 0px;
+    background: var(
+        --TopDecoration-Clr
+    );
+    display: flex;
+    height: 10px;
+    width: 100%;
+    filter:
+            blur(
+                4px
+            )
+            drop-shadow(
+                0px 0px 10px var(
+                    --TopDecoration-Clr
+                )
+            )
+            drop-shadow(
+                0px 0px 20px var(
+                    --TopDecoration-Clr
+                )
+            )
+            drop-shadow(
+                0px 0px 30px var(
+                    --TopDecoration-Clr
+                )
+            )
+            drop-shadow(
+                0px 0px 50px var(
+                    --TopDecoration-Clr
+                )
+    );
+}
+
+.container .inputBox input {
+    display: flex;
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #222222;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    animation: Aniamtion2 0.5s;
+}
+
+.container .inputBox input:hover,
+.container .inputBox input:focus {
+    filter: drop-shadow(
+        0px 0px 6px
+    );
+}
+
+.container .inputBox .show {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 60px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: 600;
+    background-color: #333333;
+    border: 6px solid #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: Aniamtion3 1s;
+}
+
+.show::before {
+    content: 'Show';
+    font-size: 0.7em;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.show.hide::before {
+    content: 'Hide';
+    font-size: 0.7em;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}

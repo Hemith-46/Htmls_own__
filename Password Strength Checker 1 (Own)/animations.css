@@ -1,0 +1,30 @@
+@keyframes Animation1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes Aniamtion2 {
+    from {
+        filter: drop-shadow(
+            0px 0px 60px
+        );
+    }
+    to {
+        filter: drop-shadow(
+            0px 0px 0px
+        );
+    }
+}
+
+@keyframes Aniamtion3 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
